@@ -26,7 +26,7 @@ def download(request):
         requestImage = Request(url + '?' + str(n), headers={'User-Agent': 'Mozilla/5.0'})
         response = urlopen(requestImage)
         fileName = 'image-' + secrets.token_hex(nbytes=8) + '.jpg'
-        with open('media/' + fileName, "wb") as f:
+        with open('polls/static/polls/media/' + fileName, "wb") as f:
             f.write(response.read())
         img = Image (file_name= fileName)
         img.save()
