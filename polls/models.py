@@ -12,4 +12,4 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
 class Image(models.Model):
-    description = models.CharField(max_length=200)
+    file_name = models.CharField(max_length=200)
