@@ -11,6 +11,7 @@ urlpatterns = [
 
 
     path('download-images', views.download, name='download'),
-    
+
+    path('show', views.show, name='show'),
     
 ]

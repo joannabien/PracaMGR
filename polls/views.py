@@ -33,3 +33,8 @@ def download(request):
         time.sleep(1)
 
     return HttpResponse("Tu ściągnęłam 5 zdjęć")
+
+def show(request):
+    image = Image.objects.get(id = 19)
+
+    return render(request, 'polls/show.html', {'image': image})
