@@ -1,3 +1,5 @@
+from email.mime import image
+import random
 import secrets
 import time
 from django.http import HttpResponse, HttpResponseRedirect
@@ -35,6 +37,8 @@ def download(request):
     return HttpResponse("Tu ściągnęłam 5 zdjęć")
 
 def show(request):
-    image = Image.objects.get(id = 19)
+    images = Image.objects.all()
+    image = random.choice(images)
+    #image = Image.objects.get(items)
 
     return render(request, 'polls/show.html', {'image': image})
