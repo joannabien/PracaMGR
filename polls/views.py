@@ -4,7 +4,7 @@ import random
 import secrets
 import time
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, reverse
 from django.urls import reverse
 from urllib.request import urlopen, Request
 
@@ -44,5 +44,7 @@ def show(request):
 
     vote = Vote(vote = True, image = image, user = "test_user" )
     vote.save()
+    #action = reverse('show')
+    action = ''
 
-    return render(request, 'polls/show.html', {'image': image})
+    return render(request, 'polls/show.html', {'image': image, 'action': action})

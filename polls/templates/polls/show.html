@@ -1,4 +1,20 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+
+<h1>
+    Formularz
+</h1>
+<form action="{% url 'dupa' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" name="zgoda" value="TAK">
+    <input type="submit" name="zgoda" value="NIE">
+</form>
+
+
+
 <img src="/static/polls/media/{{image.file_name }}">
+
+
