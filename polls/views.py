@@ -1,4 +1,5 @@
 from email.mime import image
+from pickle import TRUE
 import random
 import secrets
 import time
@@ -7,7 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from urllib.request import urlopen, Request
 
-from .models import Choice, Image, Question
+from .models import Image, Question, Vote
 
 def detail(request, question_id):
     return HttpResponse("Czy ta osoba jest atrakcyjna? %s." % question_id)
@@ -40,5 +41,8 @@ def show(request):
     images = Image.objects.all()
     image = random.choice(images)
     #image = Image.objects.get(items)
+
+    vote = Vote(vote = True, image = image, user = "test_user" )
+    vote.save()
 
     return render(request, 'polls/show.html', {'image': image})
