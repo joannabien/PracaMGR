@@ -38,12 +38,17 @@ def download(request):
     return HttpResponse("Tu ściągnęłam 5 zdjęć")
 
 def show(request):
+    if not request.session.session_key:
+            request.session.create()
+    session_key = request.session.session_key      
+
     images = Image.objects.all()
     image = random.choice(images)
     #image = Image.objects.get(items)
 
-    vote = Vote(vote = True, image = image, user = "test_user" )
-    vote.save()
+    vote = Vote(vote = True, image = image, user = session_key )
+    vote.save() #to jest do poprawienia
+
     
     
 
