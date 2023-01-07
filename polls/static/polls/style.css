@@ -1,7 +1,19 @@
-li a {
-    color: green;
-}
+
+
+
+
 
 body {
-    background: white url("images/background.gif") no-repeat;
+    background: white;
 }
+input {
+    font-size: 56px;
+    display:inline-flexbox
+}
+
+.button {
+    padding: 15px 32px;
+    text-align:justify;
+    display:inline-flexbox;
+    font-size: 36px;
+    }

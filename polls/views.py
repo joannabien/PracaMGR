@@ -44,7 +44,7 @@ def show(request):
 
     vote = Vote(vote = True, image = image, user = "test_user" )
     vote.save()
-    #action = reverse('show')
-    action = ''
+    
+    
 
-    return render(request, 'polls/show.html', {'image': image, 'action': action})
+    return render(request, 'polls/show.html', {'image': image})
